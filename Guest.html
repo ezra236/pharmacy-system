@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="320">
+    <link rel="icon" href="yu.jpg" type="image/png">
+    <title>Prime Guest Lodge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+
+    <div class="finis">
+        <img src="ui.ico" alt="Left Image" class="leftt-image">
+        <p> PRIME GUEST LODGE</p>
+        <div class="time-display" id="currentTime"></div>
+    </div>
+
+  
+  <div class="nav-container"> 
+    <div class="logo">
+        <img src="yu.jpg" alt="Logo" />
+  </div>
+  <div class="dropdown">
+     <a href="rooms.html" class="rooms-link">Rooms</a>
+       <div class="dropdown-content">
+        <a href="room1.html">Room1</a>
+        <a href="room2.html">Room2</a>
+       </div>
+  </div>
+    <nav>
+     <a href="offers.html">Offers</a>
+     <a href="contact.html">Contact Us</a>
+     <a href="locate.html">Location</a>
+     <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="shape-container" id="shape-container">
+        <div class="triangle"></div>
+        <div class="square"></div>
+        <p class="shape-text"><br>Check Availability</p>
+     
+    </div>  
+</div>
+
+
+
+<div class="dropdownn">
+    <div class="dropdownn-content" id="dropdownn">
+        <div class="check">
+            <div class="circle">
+                <div class="checkmark"></div>
+            </div>
+            <div class="tex">
+                <p><span style="color: #ff4500;">Rooms From KSH 1205.00 </span><br>
+                    Best rate guaranteed<br>
+                    Exclusive offers available
+                </p>
+            </div>
+            <form>
+                <label for="check-in">Check-in:</label>
+                <input type="text" id="check-in" name="check-in" class="flatpickr" />
+    
+                <label for="check-out">Check-out:</label>
+                <input type="text" id="check-out" name="check-out" class="flatpickr" />
+    
+                <label for="room-number">Room Number:</label>
+                <input type="numberr" id="room-number" name="room-number" />
+                <div class="dropdow" id="roomdropdow">
+                    <!-- Dropdown items -->
+                    <div data-value="1">1</div>
+                    <div data-value="2">2</div>
+                    <div data-value="3">3</div>
+                    <div data-value="4">4</div>
+                    <div data-value="5">5</div>
+                    <div data-value="6">6</div>
+                    <div data-value="7">7</div>
+                    <div data-value="8">8</div>
+                    <div data-value="9">9</div>
+                    <div data-value="10">10</div>
+                </div>
+    
+                <label for="adults">Adults:</label>
+                <input type="numberr" id="adults" name="adults" />
+                <div class="dropdoww" id="adultsdropdow">
+                    <!-- Dropdown items -->
+                    <div data-value="1">1</div>
+                    <div data-value="2">2</div>
+                    <div data-value="3">3</div>
+                    <div data-value="4">4</div>
+                    <div data-value="5">5</div>
+                    <div data-value="6">6</div>
+                    <div data-value="7">7</div>
+                    <div data-value="8">8</div>
+                    <div data-value="9">9</div>
+                    <div data-value="10">10</div>
+                </div>
+    
+                <button id="check-rates">Check Rates</button>
+
+            </form>
+            <div class="linkc">
+                <p id="modify-booking">Modify Booking</p>
+                <div class="popover" id="popover">
+                    <p><span style="color: #cb4f1d;">Modify/ Cancel Reservations</span></p>
+                    <p><span style="color: black; font-size: 14px; font-weight: normal;"> Please enter the following to retrieve your reservation</span></p>
+                    <label for="confirmation_number" class="popover-label">Confirmation Number:</label>
+                    <input type="text" id="confirmation_number" name="confirmation_number" />
+
+                    <button id="close-popover" class="popp">Close</button>
+                    <button id="continue-popover" class="popp">Continue</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+ </div>
+
+
+  <div class="slideshow-container">
+    <div class="slide fade">
+        <img src="g.jpg" alt="Image 1">
+        <p>Welcome to Prime Guest Lodge!</p>
+        <p id="maua">Maua</p>
+    </div>
+    <div class="slide fade">
+        <img src="r.jpg" alt="Image 2">
+        <p>Welcome to Prime Guest Lodge!</p>
+        <p id="maua">Deluxe Room</p>
+    </div>
+    <div class="slide fade">
+        <img src="t.jpg" alt="Image 3">
+        <p>Welcome to Prime Guest Lodge!</p>
+        <p id="maua">Quality Service</p> <!-- Maua text here -->
+    </div>
+    <div class="slide fade">
+        <img src="p.jpg" alt="Image 4"> <!-- Corrected image source and alt text -->
+        <p>Welcome to Prime Guest Lodge!</p>
+        <p id="maua">Parking</p> <!-- Maua text here -->
+    </div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <div id="menu" class="menu">
+            <p>Special Offers</p>
+            <img src="v.jpg" alt="Special Offer" class="offer-image"> 
+            <button class="offer-button">BOOK NOW</button>
+        </div>
+        <div id="toggle-box" class="toggle-box">
+            <span class="close-icon">X</span>
+        </div>
+    </div>
+  </div>
+
+<div class="full-width-paragraph">
+    <div class="content" id="content">
+    <strong style="font-size: 30px; color: #ffffff; font-weight: bolder;">PRIME GUEST LODGE</strong> <br><br>
+    <span style="font-size: 15px;"> 
+        <strong style="font-size: 25px; color: #ca3900;">5-Star Experience in Maua</strong><br><br>
+                <p>
+                    Nestled in the serene landscapes of Maua, away from the hustle and bustle of city life, Prime Guest Lodge offers an oasis of elegance and tranquility. Our lodge is the perfect blend of business and leisure, art and gastronomy, all delivered with five-star style and impeccable service.
+                    <br>
+                    At Prime Guest Lodge, comfort and exceptional customer service are at the heart of our philosophy. Our rooms are thoughtfully designed to create a welcoming atmosphere, featuring cozy furnishings and modern amenities that ensure a restful stay. Each guest is treated like family, with our attentive staff dedicated to meeting your needs and exceeding your expectations. <br>
+                    From the moment you arrive, you’ll experience a warm welcome and personalized service that makes you feel right at home. We take pride in offering affordable room prices without compromising <br>on quality, allowing you to enjoy a luxurious experience within your budget. <br><br>Whether you're here for business or leisure, Prime Guest Lodge guarantees a comfortable retreat where every guest can unwind and feel valued.
+                    <br>Located at the heart of Maua, Prime Guest Lodge invites you to indulge in a sophisticated retreat that redefines comfort. Experience a unique atmosphere that combines modern amenities with warm hospitality, making your stay truly memorable. Whether you're here for a getaway or a business trip, Prime Guest Lodge promises an unforgettable experience amidst the beauty of nature.
+                </p>
+            <span id="toggleText" class="toggle_">More</span>
+        </div>
+    </span>
+    <div class="clients" >
+        <div class="titley">What our customers say about us!</div>
+        <div class="arrowy-container">
+            <button class="arrowy left" id="prevBtny">&#10094;</button>
+            <div class="scrolly-container" id="scrollyContainer">
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="pe.jpg">
+                    </div>
+                    <p>
+                        Absolutely wonderful experience! The rooms are beautifully decorated, spacious, and immaculately clean.<br>
+                        The staff's attention to detail and warm hospitality made our stay unforgettable.<br>
+                        Every morning, we woke to the serene surroundings that added a sense of tranquility<br>
+                        to our getaway. The quality of furnishings and delightful amenities made it feel<br>
+                        like a true five-star experience. We felt pampered, from room service<br>
+                        to thoughtful touches that created a comfortable, restful atmosphere.<br>
+                        I highly recommend staying here for anyone seeking a memorable<br>
+                        experience filled with warmth and luxury.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="re.webp">
+                    </div>
+                    <p>
+                        The service here is top-notch! From the cozy, well-appointed rooms to the friendly staff,<br>
+                        everything exceeded our expectations. A fantastic place to unwind and relax.<br>
+                        The attention to detail in decor and the calm surroundings<br>
+                        truly create a peaceful retreat. Each room provides an escape<br>
+                        from the busyness of everyday life, with comfortable beds<br>
+                        and spacious areas to relax. The on-site amenities are incredible,<br>
+                        and every interaction with the staff felt personalized.<br>
+                        It’s the ideal spot for a weekend recharge or longer stay.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="oo.avif">
+                    </div>
+                    <p>
+                        A true gem! The rooms are luxurious yet comfortable, with every amenity you could need.<br>
+                        The staff is incredibly attentive, making every guest feel special.<br>
+                        The peaceful ambiance paired with modern touches creates an environment<br>
+                        that’s both relaxing and refined. Each evening was perfect, from<br>
+                        the exceptional room service to the cozy lounge areas. The location<br>
+                        offers the best of both tranquility and accessibility. I can’t<br>
+                        say enough about the fantastic service and attention to detail.<br>
+                        A must-visit for those who value comfort and elegance.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="hh.webp">
+                    </div>
+                    <p>
+                        Perfect getaway! The rooms are stylish and pristine, offering a peaceful retreat.<br>
+                        The team went above and beyond to ensure our comfort. Highly recommended!<br>
+                        Each morning started with a scenic view and delicious breakfast.<br>
+                        We loved the peacefulness of the surroundings and the thoughtful<br>
+                        details in the room that made our stay cozy and delightful.<br>
+                        With spacious layouts and well-chosen decor, this lodge offers<br>
+                        both elegance and comfort. We felt refreshed, energized, and<br>
+                        would definitely return. A lovely escape from the everyday.
+                    </p>
+                </div>
+                
+            </div>
+            <button class="arrowy right" id="nextBtny">&#10095;</button>
+        </div>
+    </div>
+</div>    
+ 
+
+
+
+    <div class="container">
+        <div class="image-container">
+            <img src="t.jpg" alt="Background Image">
+            <p>Welcome to Prime Guest Lodge! Your perfect escape awaits.</p>
+        </div>
+        <p class="text-right">
+            <strong style="font-size: 30px; color: #ff4500;">ACCOMODATION</strong> <br><br> <span style="font-size: 15px; color: #000000;">We warmly invite our esteemed guests to experience the luxurious ambiance at <strong>Prime Guest Lodge</strong>. Our facility offers elegantly designed Executive Suites, Premium Rooms, and an exclusive Lounge. Each space is crafted with meticulous attention to detail, ensuring comfort and sophistication for discerning travelers. Whether you're here for business or leisure, we promise an exceptional stay tailored to meet the highest standards of hospitality.</span>
+            <br><br>
+            <button class="book-now-btn" onclick="window.location.href='room.html';">Rooms from 1200Ksh &nbsp;&nbsp&nbsp;&nbsp;&nbsp;Book Now</span>
+            </button>
+        </p>
+    </div>
+
+
+    <div class="content-container">
+        <div class="text-container">
+            <p>
+                <div class="i">
+                <strong style="font-size: 30px; color: #ff4500;">DINING</strong> <br><br>
+                </div>
+                <span style="font-size: 16px; color: #000000;">
+                    At Prime Guest Lodge, our culinary team invites you to experience an exquisite dining journey.
+                    Our restaurant offers a delightful array of regional and international specialties, ensuring that 
+                    every meal is a memorable occasion. Enjoy your dining experience on our beautifully designed terrace 
+                    overlooking the serene surroundings or in the elegantly appointed dining room. Each dish is prepared 
+                    with seasonal ingredients and paired with the finest wines, all within a welcoming atmosphere that 
+                    reflects the warmth of our hospitality. <br>Join us for a rich montage of flavors and textures that 
+                    celebrate the art of fine dining.
+                </span>
+            </p>
+        </div>
+        <div class="image-section">
+            <img src="n.jpg" alt="Dining at Prime Guest Lodge">
+        </div>
+    </div>
+
+
+    <div class="offers">
+        <div class="arroww-container">
+            <button class="arroww left" id="prevBtn">&#10094;</button>
+            <h2 class="title">PRIME GUEST OFFERS</h2>
+            <button class="arroww right" id="nextBtn">&#10095;</button>
+        </div>
+        <h5 class="titler"> Our best package</h5>
+        <div class="scroll-container" id="scrollContainer">
+            <div class="scroll-item1">
+                <img src="b.jpg">
+                <p class="desc"> <a href="off.html">ENJOY DELICIOUS BREAKFAST EVERY MORNING.</a></p>
+                <button class="offa-button" onclick="location.href='enquiry.html'">BOOK NOW</button>
+            </div>
+            <div class="scroll-item2">
+                <img src="c.jpg">
+                <p class="d"> <a href="off.html">SAVOR OUR FRESHLY PREPARED DINNER SPECIALS.</a></p>
+                <button class="offf-button" onclick="location.href='enquiry.html'">BOOK NOW</button>
+            </div>
+            <div class="scroll-item3">
+                <img src="s.avif">
+                <p class="de"> <a href="off.html">TASTE EXQUISITE DESSERTS FOR A SWEET TREAT.</a></p>
+                <button class="offff-button" onclick="location.href='enquiry.html'">BOOK NOW</button>
+            </div>
+            <div class="scroll-item4">
+                <img src="d.jpeg">
+                <p class="des"> <a href="off.html">RELAX IN LUXURIOUS ROOMS WITH VIEWS.</a></p>
+                <button class="offd-button" onclick="location.href='enquiry.html'">BOOK NOW</button>
+            </div>
+            <div class="scroll-item5">
+                <img src="v.jpg">
+                <p class="descr"> <a href="off.html">EXPERIENCE UNMATCHED HOSPITALITY IN EVERY STAY.</a></p>
+                <button class="offs-button" onclick="location.href='enquiry.html'">BOOK NOW</button>
+            </div>
+        </div>
+        <div class="triangled" onclick="scrollToTop()">
+            <div class="arrowd"></div>
+        </div>     
+
+    </div>
+
+
+
+
+<div class="acc"> 
+    <div class="block">
+            <img src="yu.jpg" style="cursor: pointer;">
+    </div>
+
+    <div class="info">
+        <div class="section section1">
+            <h3><a href="us.html" class="about-link">Contact Details</a> </h3>
+            <p><a href="us.html" class="about-lin">0799963300</a></p>
+            <p><a href="us.html" class="about-lin">0708364240</a></p>
+            <p class="pp">Prime Guest Lodge</p>
+            <p class="oo">Maua basin, Meru</p>
+        </div>
+        <div class="section section2">
+            <h3> <a href="us.html" class="about-link">About Us</a></h3>
+            <p><a href="us.html" class="about-lin">Contact Us</a></p>
+            <p><a href="us.html" class="about-lin">Location</a></p>
+        </div>
+        <div class="section section3">
+            <h3><a href="us.html" class="about-link">Email Details</a> </h3>
+            <p class="u"><a href="us.html" class="about-lin">Kaithia@gmail.com</a></p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/" target="_blank">
+                <img src="f.jpeg" alt="Facebook Share" class="social-icon">
+            </a><br>
+            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+        <form action="send_email.php" method="post">
+            <div class="input-button-container">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Send</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footer">
+        
+        <div class="copyright">
+            © 2024 Prime Guest Lodge | Made by ezramuthomi@gmail.com
+        </div>
+        <div class="stp">
+        <a href="#">Site map</a> 
+        <a href="#">Terms of use</a> 
+        <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize Flatpickr
+        flatpickr('.flatpickr', {
+            dateFormat: "Y-m-d", // Adjust date format as needed
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="aa.js"></script>
+</body>
+</html>

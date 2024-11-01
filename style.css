@@ -1,0 +1,1428 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.finis {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 20px;
+    background-color: #d3b991;
+    width: 100%;
+    height: 15px; 
+    box-sizing: border-box; 
+    transition: top 0.5s ease; 
+}
+
+.finis.scrolled {
+    top: -50px; /* Hides .finis by moving it upwards */
+}
+
+.finis p{
+    text-align: left;
+    left: 0;
+    color: #000;
+}
+
+.leftt-image {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 25px;
+}
+
+.time-display {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 1180px;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 1100;
+    padding: 0; /* Remove extra padding */
+    margin: 0;
+    transition: top 0.5s ease; /* Smooth transition */
+}
+
+.nav-container.scrolled {
+    top: 0;
+}
+
+nav {
+    background-color:#eccea5;
+    width: 90%;
+    padding: 23px;
+    text-align: left;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
+}
+
+.logo {
+    display: flex; /* Aligns content using flexbox */
+    align-items: center; /* Vertically centers the logo */
+    justify-content: flex-start; /* Aligns the logo to the left */
+    background-color: #eccea5;
+}
+
+.logo img {
+    width: 50px; /* Adjust the size to your preference */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevents the logo from getting larger than the container */
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+    margin: 0;
+    padding: 0;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.shape-container {
+    position: relative;
+    width: 120px; /* Width of the square */
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .square {
+    width: 100%; /* Full width */
+    height: 85px; /* Height of the square */
+    background-color: orange; /* Background color for the square */
+    position: absolute; /* Position it above the triangle */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+  }
+  
+.shape-container:hover .square {
+    background-color: rgb(254, 63, 0);/* Change color on hover */
+}
+
+.shape-container:hover .triangle{
+    border-top-color: rgb(254, 63, 0); /* Change color on hover */
+}
+  
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent; /* Half of the square width */
+    border-right: 60px solid transparent; /* Half of the square width */
+    border-top: 35px solid orange; /* Height of the triangle */
+    position: relative; 
+    top: 85px; /* Position the triangle below the square */
+    z-index: 1500;
+  }
+
+  .shape-text {
+    position: absolute; 
+    top: 10px; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); 
+    color: #333; 
+    font-size: 16px; 
+    margin: 0; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+nav a {
+    text-decoration: none; 
+    color: black; 
+    padding: 10px 20px; 
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 85px; 
+    position: relative; 
+}
+
+nav a::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; /* Align with the left */
+    bottom: 0; /* Start at the bottom of the text */
+    width: 100%; /* Full width initially */
+    height: 5px; 
+    background-color: #ff4500; 
+    transition: bottom 0.5s ease, height 0.7s ease; 
+    box-shadow: 0 0 10px #ff7441; 
+    opacity: 0; /* Initially hidden */
+}
+
+nav a:hover::after {
+    bottom: -17px; /* Move the line down */
+    height: 5px; 
+    opacity: 1; 
+}
+
+
+nav a:hover {
+    color: #ff4500; 
+}
+
+.menu-container {
+    position: relative; 
+    z-index: 10;
+}
+
+  /* Styles for the 'X' box (toggle button) */
+  .toggle-box {
+    position: fixed;
+    top: 335px;
+    left: 200px; /* Position this initially off the screen */
+    width: 25px;
+    height: 25px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 2px;
+    z-index: 10;
+    transition: left 0.3s ease-in-out; /* Smooth movement */
+  }
+  
+  /* Styles for the hidden menu */
+  .menu {
+    position: fixed;
+    top: 230px;
+    left: 0; /* Initially on-screen */
+    width: 180px;
+    height: 25vh;
+    background-color: #ffb264;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+
+  .menu.active {
+    left: -207px; /* Move out of view when active */
+}
+
+  .menu p {
+    color: rgb(0, 0, 0); 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin: 0; 
+    text-align: center; 
+}
+  
+  /* Adjust the toggle box position when menu is active */
+  .menu.active ~ .toggle-box {
+    left: 0; 
+  }
+  
+  .offer-image {
+    max-width: 100%; 
+    height: 60%; 
+    display: block; 
+    margin-top: 10px; 
+    border-radius: 6px;
+}
+
+.offer-button {
+    background-color: #ef640d; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    padding: 11px 55px; /* Padding for the button */
+    border-radius: 0px; 
+    cursor: pointer; /* Change cursor on hover */
+    margin-top: 20px; 
+    font-weight: bold;
+    transition: background-color 0.3s; 
+}
+
+.offer-button:hover {
+    background-color: #bb4b00; /* Darker shade on hover */
+}
+
+.full-width-paragraph {
+    width: 100%; 
+    padding: 20px; 
+    background-color: #301414;
+    box-sizing: border-box; 
+    color: white; 
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center; 
+    overflow: hidden; /* Ensure content overflow is hidden */
+    transition: max-height 3s ease;
+    max-height: 265px; /* Set initial height to 81px */
+    position: relative; /* Allow positioning of toggle text */
+}
+
+.content {
+    padding: 10px;
+}
+
+.toggle_ {
+    margin: 10px; 
+    padding: 0px; 
+    background-color: transparent; 
+    color: rgb(255, 102, 0); 
+    cursor: pointer; 
+    position: absolute; 
+    font-size: 14px;
+    top: 230px;
+    bottom: 10px;
+    right: 10px; 
+    font-weight: bold; 
+    text-decoration: none;
+    transition: top 2s ease;
+    z-index: 900;
+}
+
+.toggle_::after {
+    content: ''; 
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: -11px; 
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(255, 145, 0); 
+    transform: translateY(5px); /* Initial position of underline */
+    transition: transform 0.3s ease; 
+}
+
+.toggle_:hover::after {
+    transform: translateY(-8px); /* Move the underline up on hover */
+}
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 35px;
+    max-height: auto;
+}
+
+.titley {
+    font-size: 24px;
+    color: #da450f;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.arrowy-container {
+    display: flex;
+    align-items: center;
+}
+
+.scrolly-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 940px; /* Adjust width to show three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrolly-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrolly-item {
+    min-width: 850px; /* Ensure each item gets allocated space */
+    height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevents items from shrinking */
+    transition: transform 3s ease, opacity 3s ease; 
+}
+
+.scrolly-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+/* Background colors for items */
+.scrolly-item:nth-child(1) { background-color: #eccea5; min-width: 780px;}
+.scrolly-item:nth-child(2) { background-color: #eccea5; min-width: 760px;}
+.scrolly-item:nth-child(3) { background-color: #eccea5; min-width: 770px; }
+.scrolly-item:nth-child(4) { background-color: #eccea5; min-width: 790px;}
+
+.im img {
+    width: 80px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; 
+    margin-top: 20px;
+}
+
+.scrolly-item p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.arrowy {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 10px;
+    color: #007bff;
+}
+
+.arrowy:hover {
+    color: #0056b3;
+    background-color: transparent;
+}
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 10000px;
+    margin-top: 55px;
+}
+
+
+.image-container {
+    position: relative;
+    width: 70%;
+    max-width: 600px;
+    left: 10%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container p {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-right {
+    margin-left: 250px;
+    margin-top: 25px;
+    color: black;
+    font-size: 22px;
+    font-weight: normal;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.book-now-btn {
+    background-color: #e06230;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: #952b0b;
+}
+
+
+.content-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 10000px;
+    margin-top: 60px;
+}
+
+.text-container {
+    flex: 1; /* Allow text container to take up available space */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    margin-top: -8%;
+    margin-left: 120px;
+    margin-right: 110px;
+}
+
+.i {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    flex: 0 0 auto; /* Prevent the image section from growing */
+    margin-left: 20px;
+    margin-right: 150px;
+}
+
+.image-section img { 
+    height: 410px; 
+    max-width: 550px;
+}
+
+.offers {
+    display: flex;
+    flex-direction: column; /* Stack arrows and scroll container vertically */
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    height: 860px;
+    background-color: #eccea5;
+}
+
+.arroww-container {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+    margin-bottom: 10px; /* Space between arrows and scroll container */
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 1100px; /* Adjusted width to fit three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scroll-item1,
+.scroll-item2,
+.scroll-item3,
+.scroll-item4,
+.scroll-item5 {
+    min-width: 350px;
+    height: 550px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.scroll-item1 { background-color: #eccea5; }
+.scroll-item2 { background-color: #eccea5; }
+.scroll-item3 { background-color: #eccea5; }
+.scroll-item4 { background-color: #eccea5; }
+.scroll-item5 { background-color: #eccea5; }
+
+.scroll-item1 img {
+    width: 312px; 
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.scroll-item1 p.desc {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item1 p.desc a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item1 p.desc a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item2 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item2 p.d {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item2 p.d a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item2 p.d a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item3 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item3 p.de {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item3 p.de a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item3 p.de a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item4 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item4 p.des {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item4 p.des a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item4 p.des a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item5 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item5 p.descr {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item5 p.descr a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item5 p.descr a:hover {
+    text-decoration: underline; 
+}
+
+.offa-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 40px; 
+    margin-left: 18px;
+}
+
+.offa-button:hover {
+    background-color: #f81100; 
+}
+
+.offf-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 45px; 
+    margin-left: 8px;
+}
+
+.offf-button:hover {
+    background-color: #f81100; 
+}
+
+.offff-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 45px; 
+    margin-left: 8px;
+}
+
+.offff-button:hover {
+    background-color: #f81100; 
+}
+
+.offd-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 63px; 
+    margin-left: 7px;
+}
+
+.offd-button:hover {
+    background-color: #f81100; 
+}
+
+.offs-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 43px; 
+    margin-left: 8px;
+}
+
+.offs-button:hover {
+    background-color: #f81100; 
+}
+
+.arroww {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 44px;
+    padding: 2px;
+    color: #007bff;
+}
+
+.arroww:hover {
+    background-color: transparent;
+    color: #0056b3;
+}
+
+.title {
+    margin: 0 185px; /* Space between title and arrows */
+    font-size: 38px; /* Title size */
+    color: #332824; /* Title color */
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.titler{
+    font-size: 20px;
+    text-align: center;
+    color: rgba(175, 26, 26, 0.877);
+}
+
+.triangled {
+    position: relative;
+    width: 0; /* No width needed for the triangle */
+    height: 0; /* No height needed for the triangle */
+    border-left: 50px solid transparent; /* Adjust left side for medium width */
+    border-right: 50px solid transparent; /* Adjust right side for medium width */
+    border-bottom: 30px solid #e8e8e8; /* Triangle color and small height */
+    margin-left: -5px;
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; /* Adjust left side for medium width */
+    border-right: 16px solid transparent; /* Adjust right side for medium width */
+    border-bottom: 10px solid #c0b4b4; /* Triangle color and small height */
+    transform: translateX(-50%); /* Center the arrow */
+}
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    background-color: #eccea5;
+    padding: 17px;
+    text-align: center;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
+}
+
+.dropdown a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 55px;
+    position: relative;
+}
+
+.dropdown a:hover {
+    color: #ff4500; /* Change text color to red */
+}
+
+/* Add the arrow after the "Rooms" link text */
+.rooms-link::after {
+    content: "▼"; /* Down arrow */
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.dropdown:hover .rooms-link::after {
+    content: "▲"; /* Change to up arrow */
+    transform: rotate(180deg); /* Flip the arrow on hover */
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #FAF0E6;
+    min-width: 300px;
+    height: 300px; 
+    opacity: 0; /* Start fully transparent */
+    z-index: 1800;
+    top: 93%;
+    left: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+    margin-top: 5px;
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+    padding: 10px 0; 
+    max-height: 300px;
+    opacity: 1; /* Make fully visible */
+    pointer-events: auto;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+    transition: all 0.5s ease;
+}
+
+.dropdown-content a:hover {
+    color: #ff4500; /* Change text color to red */
+}
+
+
+.dropdown-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* Thickness of the underline */
+    background-color: rgb(255, 38, 0); /* The underline color */
+}
+
+    
+
+.dropdownn {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.dropdownn-content {
+    display: block; /* Set to block initially; we'll control visibility with max-height */
+    position: absolute; 
+    background-color: #392b2b;
+    min-width: 1511px;
+    max-height: 0; /* Start closed */
+    overflow: visible;
+    opacity: 0; /* Fully transparent */
+    z-index: 1000;
+    top: 100%;
+    left: 1px;
+    padding: 0; /* No padding initially */
+    transition: max-height 2s ease, padding 2s ease, opacity 0.5s ease;
+    margin-top: 71px;
+    border-radius: 0px;
+    pointer-events: none;
+}
+
+.dropdownn-content.show {
+    max-height: 500px; /* Adjust based on desired dropdown height */
+    padding: 0px 0; /* Add padding when expanded */
+    opacity: 1; /* Fully visible */
+}
+
+
+.linkc {
+    display: block; /* or flex if using flex layout */
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+
+.linkc p {
+    color: #ffffff; /* Initial text color */
+    padding: 10px 20px; /* Adding padding for the link */
+    display: inline-block; /* Ensures padding works as expected */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    text-decoration: underline;
+    pointer-events: auto;
+    margin-left: auto;
+}
+
+.linkc p:hover {
+    color: #ff5900; /* Text color on hover */
+    background-color: transparent; /* Background color on hover */
+    border-radius: 4px; /* Optional: rounded corners */
+    cursor: pointer;
+}
+
+.popover {
+    position: absolute;
+    top: 100%; /* Position below the "Modify Booking" text */
+    left: 80%;
+    transform: translateX(-50%);
+    background-color: #f9ede1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Width of the popover */
+    z-index: 1000;
+    height: 260px;
+    display: none; /* Hidden by default */
+}
+
+.popover p {
+    margin: 0;
+    font-size: 14px;
+    color: #e14e26;
+    text-decoration: none;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.popover .popover-label {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 10px; /* Adjust spacing from above elements */
+}
+
+/* Style for the Confirmation Number input */
+.popover input[type="text"] {
+    padding: 12px;
+    width: 200px;
+    border-radius: 3px;
+    pointer-events: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.popover button {
+    margin-top: 10px;
+    padding: 10px 35px;
+    background-color: #ea6827;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.popp{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.tex{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.tex p{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* Circle container styling */
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 4px solid #A5D6A7;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* Checkmark styling */
+.checkmark {
+    width: 5px;
+    height: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(15, 228, 82);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+
+/* Container for the form */
+.check {
+    background-color: #392b2b;
+    border-radius: 0px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style each label and input in a row */
+.check form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.check label {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 58px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+/* Set width and minimum height of input fields */
+.check input[type="text"].flatpickr {
+    width: 150px;
+    padding: 8px 30px 8px 8px; /* Add left padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif; /* Change to your desired font family */
+    font-size: 14px;
+    min-height: 10px; /* Set a minimum height */
+    
+    /* Add background image */
+    background-image: url('calendar-icon-orange.ico'); /* Path to your icon */
+    background-repeat: no-repeat; /* Prevent the icon from repeating */
+    background-position: right 10px center;/* Position the icon inside the input */
+    background-size: 16px 16px; /* Set size of the icon */
+    pointer-events: auto;
+}
+
+
+/* Set width for number input */
+.check input[type="number"] {
+    font-family: 'Arial', sans-serif;/* Change to your desired font family */
+    font-size: 14px;
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    pointer-events: auto;
+}
+
+.check input[type="numberr"] {
+    font-family: 'Arial', sans-serif;/* Change to your desired font family */
+    font-size: 14px;
+    width: 32px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 24 24"%3E%3Cpath d="M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: left 50px center;
+    background-size: 28px;
+    padding-right: 36px; 
+    cursor: pointer; 
+    pointer-events: auto;
+}
+
+.dropdow {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    z-index: 2500;
+    width: 55px; /* Match input width */
+    margin-left: 618px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdoww {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    z-index: 2500;
+    width: 55px; /* Match input width */
+    margin-left: 768px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdow div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdow div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
+.dropdoww div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdoww div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
+.check button {
+    padding: 9px 48px;
+    background-color: #cf6237;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    pointer-events: auto;
+}
+
+.check button:hover {
+    background-color: #9b2611;
+}  
+
+/* Style for the Close button */
+#close-popover {
+    padding: 9px 48px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+/* Style for the Continue button */
+#continue-popover {
+    padding: 9px 48px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Adds space between the two buttons */
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; /* Adjust for the desired spacing */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 94vh;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img { 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slide p {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#maua { 
+    position: absolute;
+    bottom: 20px;
+    left: 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    visibility: hidden; /* Initially hidden */
+    margin-top: 605px;
+}
+
+
+.fade {
+    animation: fade 1s ease-in-out forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.block {
+    top: 0px;
+    width: 100%; 
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e8e8e8; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: none; 
+    box-shadow: none; 
+}
+  
+
+.block img{
+    width: 120px;
+}
+  
+
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+}
+
+/* Individual section styling */
+.section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.section1 { 
+    color: #000000;
+    margin-left: 80px;
+} 
+.section2 { 
+    color: #000000; 
+} 
+.section3 { 
+    color: #000000;
+} 
+
+.social-icon {
+    margin-left: 20px;
+    width: 27px;  /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+}
+
+
+.pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+.oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+
+.u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.stp a {
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 30px; 
+}
+
+.stp a:hover {
+    color: #ff4500;
+}
+
+/* Style for the copyright section */
+.copyright {
+    font-size: 0.8rem;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 60px;
+}
+
+/* Responsive: Stack the sections vertically on small screens */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .stp {
+        margin-top: 10px;
+    }
+}
+
+.about-link {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-link:hover {
+    color: #ff4500; 
+}
+
+.about-lin {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: 15px; 
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-lin:hover {
+    color: #ff4500; 
+}
+
+.form-container {
+    background-color: #d0d0ce;
+}
+  
+  .input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="email"] {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+  }
+  
+  button {
+    background-color: #ffab74;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent the button from shrinking */
+  }
+  
+  button:hover {
+    background-color: #fc5c06;
+    }

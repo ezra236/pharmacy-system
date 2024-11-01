@@ -1,0 +1,22 @@
+<script>
+    // Function to extract the confirmation number from the URL
+    function getConfirmationNumber() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("confirmation_number") || ""; // Returns empty if not found
+    }
+
+    // Populate the input field on page load
+    window.onload = function() {
+        const confirmationInput = document.getElementById("confirmation_number");
+        if (confirmationInput) {
+            confirmationInput.value = getConfirmationNumber();
+        }
+    };
+</script>
+
+<!-- HTML form in cancel.html -->
+<form>
+    <label for="confirmation_number">Confirmation Number:</label>
+    <input type="text" id="confirmation_number" name="confirmation_number" />
+    <!-- Other form elements as needed -->
+</form>
